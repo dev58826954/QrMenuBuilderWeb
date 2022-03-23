@@ -51,25 +51,25 @@ function request(path, {data = null, token = null, method = "GET"}) {
 
 
 export function signIn(username, password) {
-    return request("/auth/token/login/", {
+    return request("https://shielded-ocean-74134.herokuapp.com/auth/token/login/", {
         data: {username, password},
         method: "POST",
     })
 }
 
 export function register(username, password) {
-    return request("/auth/users/", {
+    return request("https://shielded-ocean-74134.herokuapp.com/auth/users/", {
         data: {username, password},
         method: "POST",
     })
 }
 
 export function fetchPlaces(token) {
-    return request("/api/places/", {token});
+    return request("https://shielded-ocean-74134.herokuapp.com/api/places/", {token});
 }
 
 export function addPlace(data, token) {
-    return request("/api/places/", {data, token, method: "POST"});
+    return request("https://shielded-ocean-74134.herokuapp.com/api/places/", {data, token, method: "POST"});
 }
 
 export function uploadImage(image) {
@@ -86,45 +86,45 @@ export function uploadImage(image) {
 }
 
 export function fetchPlace(id, token) {
-    return request(`/api/places/${id}`, {token});
+    return request(`https://shielded-ocean-74134.herokuapp.com/api/places/${id}`, {token});
 }
 
 export function addCategory(data, token) {
-    return request("/api/categories/", {data, token, method: "POST"});
+    return request("https://shielded-ocean-74134.herokuapp.com/api/categories/", {data, token, method: "POST"});
 }
 
 export function addMenuItems(data, token) {
-    return request("/api/menu_items/", {data, token, method: "POST"});
+    return request("https://shielded-ocean-74134.herokuapp.com/api/menu_items/", {data, token, method: "POST"});
 }
 
 export function updateMenuItem(id, data, token) {
-    return request(`/api/menu_items/${id}`, {data, token, method: "PATCH"});
+    return request(`https://shielded-ocean-74134.herokuapp.com/api/menu_items/${id}`, {data, token, method: "PATCH"});
 }
 
 export function removePlace(id, token) {
-    return request(`/api/places/${id}`, {token, method: "DELETE"});
+    return request(`https://shielded-ocean-74134.herokuapp.com/api/places/${id}`, {token, method: "DELETE"});
 }
 
 export function removeCategory(id, token) {
-    return request(`/api/categories/${id}`, {token, method: "DELETE"});
+    return request(`https://shielded-ocean-74134.herokuapp.com/api/categories/${id}`, {token, method: "DELETE"});
 }
 
 export function removeMenuItem(id, token) {
-    return request(`/api/menu_items/${id}`, {token, method: "DELETE"});
+    return request(`https://shielded-ocean-74134.herokuapp.com/api/menu_items/${id}`, {token, method: "DELETE"});
 }
 
 export function updatePlace(id, data, token) {
-    return request(`/api/places/${id}`, {data, token, method: "PATCH"});
+    return request(`https://shielded-ocean-74134.herokuapp.com/api/places/${id}`, {data, token, method: "PATCH"});
 }
 
 export function createPaymentIntent(data, token) {
-    return request("/api/create_payment_intent/", {data, token, method: "POST"});
+    return request("https://shielded-ocean-74134.herokuapp.com/api/create_payment_intent/", {data, token, method: "POST"});
 }
 
 export function fetchOrders(placeId, token) {
-    return request(`/api/orders/?place=${placeId}`, {token});
+    return request(`https://shielded-ocean-74134.herokuapp.com/api/orders/?place=${placeId}`, {token});
 }
 
 export function completeOrder(id, data, token) {
-    return request(`/api/orders/${id}`, {data, token, method: "PATCH"});
+    return request(`https://shielded-ocean-74134.herokuapp.com/api/orders/${id}`, {data, token, method: "PATCH"});
 }
